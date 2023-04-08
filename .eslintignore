@@ -1,0 +1,9 @@
+# Folders
+/dist
+/node_modules
+
+# Files
+.eslintrc
+vite.config.ts
+vite-env.d.ts
+jest.config.cjs
