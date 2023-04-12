@@ -21,9 +21,16 @@
 		"sourceType": "module",
 		"project": "./tsconfig.json"
 	},
-	"plugins": ["react"],
+	"plugins": [
+		"react"
+	],
 	"rules": {
-		"no-unused-vars": "off",
-		"@typescript-eslint/no-unused-vars": "warn"
+		"no-unused-vars": "warn",
+		"@typescript-eslint/no-misused-promises": "off",
+		"@typescript-eslint/no-unused-vars": "warn",
+		"react/prop-types": "off",
+		"@typescript-eslint/no-var-requires": "off",
+		"@typescript-eslint/strict-boolean-expressions": "off",
+		"@typescript-eslint/no-floating-promises": "off"
 	}
 }

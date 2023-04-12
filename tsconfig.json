@@ -2,18 +2,44 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@assets/*": ["src/assets/*"],
-			"@utils/*": ["src/utils/*"],
-			"@models/*": ["src/models/*"],
-			"@components/*": ["src/components/*"],
-			"@pages/*": ["src/pages/*"],
-			"@redux/*": ["src/redux/*"],
-			"@hooks/*": ["src/hooks/*"],
-			"@sass/*": ["src/sass/*"]
+			"@assets/*": [
+				"src/assets/*"
+			],
+			"@utils/*": [
+				"src/utils/*"
+			],
+			"@models/*": [
+				"src/models/*"
+			],
+			"@constants/*": [
+				"src/constants/*"
+			],
+			"@components/*": [
+				"src/components/*"
+			],
+			"@pages/*": [
+				"src/pages/*"
+			],
+			"@redux/*": [
+				"src/redux/*"
+			],
+			"@hooks/*": [
+				"src/hooks/*"
+			],
+			"@services/*": [
+				"src/services/*"
+			],
+			"@sass/*": [
+				"src/sass/*"
+			]
 		},
 		"target": "ESNext",
 		"useDefineForClassFields": true,
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"lib": [
+			"DOM",
+			"DOM.Iterable",
+			"ESNext"
+		],
 		"allowJs": false,
 		"skipLibCheck": true,
 		"esModuleInterop": false,
@@ -27,6 +53,12 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src"],
-	"references": [{ "path": "./tsconfig.node.json" }]
+	"include": [
+		"src"
+	],
+	"references": [
+		{
+			"path": "./tsconfig.node.json"
+		}
+	]
 }
