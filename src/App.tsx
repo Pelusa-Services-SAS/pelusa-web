@@ -1,35 +1,33 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import './App.css';
+// Libraries
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App(): JSX.Element {
-	const [count, setCount] = useState(0);
+// Pages
+import Login from '@pages/login/Login.view';
+import Users from '@pages/users/Users.view';
+import NotFound from '@pages/not-found/NotFound.view';
 
+// Components
+import { ProtectedRoute } from '@components/routes';
+import { Layout } from '@components/layout/Layout.view';
+
+// Styles
+import './App.scss';
+
+const App = (): JSX.Element => {
 	return (
-		<div className='App'>
-			<div>
-				<a href='https://reactjs.org' target='_blank' rel='noreferrer'>
-					<img src={reactLogo} className='logo react' alt='React logo' />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className='card'>
-				<button
-					onClick={() => {
-						setCount(count => count + 1);
-					}}
-				>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className='read-the-docs'>
-				Click on the Vite and React logos to learn more
-			</p>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route index element={<Login />} />
+				<Route path='/login' element={<Login />} />
+				<Route element={<ProtectedRoute />}>
+					<Route element={<Layout />} path='/users'>
+						<Route path='/users' element={<Users />} />
+					</Route>
+				</Route>
+				<Route path='*' element={<NotFound />} />
+			</Routes>
+		</BrowserRouter>
 	);
-}
+};
 
 export default App;
